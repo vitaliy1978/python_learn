@@ -1,9 +1,8 @@
-n = '7'
-my_frozen = set()
-for i in range(78):
-    # print(my_frozen)
-    my_frozen.add(int(n))
-    n += '7'
-my_frozen = frozenset(my_frozen)
+def sayhello():
+    print('hello')
+    print('hello')
 
-
+def square(x):
+    print(f'Квадрат числа {x} = {x**2}')
+sayhello()
+square(2)
