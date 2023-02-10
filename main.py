@@ -1,26 +1,15 @@
-def sayhello():
-    print('hello')
-    print('hello')
+from typing import List, Optional
 
-def square(x):
-    print(f'Квадрат числа {x} = {x**2}')
+n = "hello hi hello"
 
-def multiply(x,y):
-    print(f'{x} * {y} = {x*y}')
+def first_repeated_word(n) -> str:
+    """ Находит первый дубль в строке """
+    n = n.split()
+    d: Optional[str] = None
+    for i in range(len(n)):
+        if n.count(n[i]) > 1 and n[i] in n[0:i]:
+            d = n[i]
+            break
+    return d
 
-def even(a):
-    print(a,'четное' if a % 2 == 0 else 'не четное')
-
-def factorial(x):
-    pr = 1
-    for i in range(2,x+1):
-        pr = pr * i
-    print(f'факториал числа {x} = {pr}')
-
-sayhello()
-square(2)
-multiply(3,4)
-for i in range(30,34):
-    even(i)
-print()
-factorial(9)
+print(first_repeated_word(n))
