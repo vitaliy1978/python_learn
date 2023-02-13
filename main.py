@@ -1,15 +1,9 @@
-from typing import List, Optional
+subject_marks = [('English', 88), ('Science', 90), ('Maths', 97),
+                 ('Physics', 93), ('History', 82), ('French', 78),
+                 ('Art', 58), ('Chemistry', 76), ('Programming', 91)]
 
-n = "hello hi hello"
+a = sorted(subject_marks, key=lambda x: (-x[1], x[0]))
 
-def first_repeated_word(n) -> str:
-    """ Находит первый дубль в строке """
-    n = n.split()
-    d: Optional[str] = None
-    for i in range(len(n)):
-        if n.count(n[i]) > 1 and n[i] in n[0:i]:
-            d = n[i]
-            break
-    return d
+for i in a:
+    print(*i)
 
-print(first_repeated_word(n))
